@@ -1,6 +1,9 @@
 <h1 align="center"> Born2beRoot - @42sp</h1>
  <p align="center">:information_source: Basic Debian GNU/Linux server setup and configuration on a VM.</p>
 
+<p align="center"><a href="https://github.com/augustobecker/Born2beRoot/blob/main/README-ptbr.md" target="_blank"><img src="https://img.shields.io/badge/dispon%C3%ADvel%20tamb%C3%A9m%20em-PT--BR-yellow"></a></p>
+
+
 ## Index
 * [What is Born2beRoot?](#what-is-born2beroot)
 * [Requirements](#requirements)
