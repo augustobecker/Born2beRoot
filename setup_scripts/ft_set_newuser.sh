@@ -1,9 +1,9 @@
 ##############################################################################
 #                                                                            #
 #                                                        :::      ::::::::   #
-#   ft_setnew_user.sh                                 :+:      :+:    :+:   #
+#   ft_setnew_user.sh                                 :+:      :+:    :+:    #
 #                                                    +:+ +:+         +:+     #
-#   By: acesar-l <acesar-l@student.42sp.org>       +#+  +:+       +#+        #
+#   By: acesar-l <acesar-l@student.42sp.org.br>    +#+  +:+       +#+        #
 #                                                +#+#+#+#+#+   +#+           #
 #   Created: 2022/01/30 16:56:19 by acesar-l          #+#    #+#             #
 #   Updated: 2022/01/30 16:56:22 by acesar-l         ###   ########.fr       #
