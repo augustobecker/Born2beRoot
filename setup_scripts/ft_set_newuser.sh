@@ -17,5 +17,6 @@ sudo useradd -m -s /bin/bash $NEW_USER
 sudo addgroup user42
 sudo usermod -aG sudo $NEW_USER
 sudo usermod -aG user42 $NEW_USER
+sudo passwd -n 2 -x 30 -w 7 $NEW_USER
 echo $NEW_USER was created and added to sudo and user42 groups.
 echo A strong password policy was 'set' to the user.
