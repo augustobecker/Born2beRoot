@@ -3,7 +3,7 @@
 #                                                       :::      ::::::::    #
 #   ft_set_hostname.sh                                 :+:      :+:    :+:   #
 #                                                    +:+ +:+         +:+     #
-#   By: acesar-l <acesar-l@student.42sp.org>       +#+  +:+       +#+        #
+#   By: acesar-l <acesar-l@student.42sp.org.br     +#+  +:+       +#+        #
 #                                                +#+#+#+#+#+   +#+           #
 #   Created: 2022/01/30 16:24:19 by acesar-l          #+#    #+#             #
 #   Updated: 2022/01/30 16:24:22 by acesar-l         ###   ########.fr       #
