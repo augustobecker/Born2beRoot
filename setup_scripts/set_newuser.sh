@@ -14,7 +14,6 @@
 NEW_USER=$1
 cd /
 sudo useradd -m -s /bin/bash $NEW_USER
-sudo addgroup friends
 sudo usermod -aG friends $NEW_USER
 sudo passwd -n 2 -x 30 -w 7 $NEW_USER
 echo $NEW_USER was created and added to friends group.
