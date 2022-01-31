@@ -13,5 +13,5 @@
 #!/bin/bash
 sed -n '25 s/minlen=8/minlen=10/' /etc/pam.d/common-password
 sed -n '25 s/difok=3/difok=7 \\/' /etc/pam.d/common-password
-sed -n -i '25 a ucredit=-1 dcredit=-1 maxrepeat=3 usercheck=1 enforce_for_root'
-/etc/pam.d/common-password
+sed -n -i '25 a ucredit=-1 dcredit=-1 maxrepeat=3 usercheck=1 enforce_for_root' \
+    /etc/pam.d/common-password
