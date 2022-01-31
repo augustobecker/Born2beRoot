@@ -13,8 +13,7 @@
 #!/bin/bash
 NEW_HOSTNAME=$1
 cd /
-sed "s/$HOSTNAME/$NEW_HOSTNAME/g" /etc/hosts | grep "use this to
-hide the output :)"
+sed -n "s/$HOSTNAME/$NEW_HOSTNAME/g" /etc/hosts
 echo $NEW_HOSTNAME > /etc/hostname
 echo $NEW_HOSTNAME > /proc/sys/kernel/hostname
 echo Hostname was changed to $NEW_HOSTNAME
