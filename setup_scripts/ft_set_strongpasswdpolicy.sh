@@ -11,8 +11,7 @@
 ##############################################################################
 
 #!/bin/bash
-$CRACKLIB = `cat /etc/pam.d/common-password | grep pam_cracklib.so`
-$NEW_POLICY = password       required        pamcracklib.so difok=7 minlen=10
-ucredit=-1 dcredit=-1 retry=3 maxrepeat=3 usercheck=1 enforce_for_root
-sed "s/$CRACKLIB/$NEW_POLICY/g" /etc/pam.d/common-password | grep "use this to
-hide the output :)"
+sed -n '25 s/minlen=8/minlen=10/' /etc/pam.d/common-password
+sed -n '25 s/difok=3/difok=7 \\/' /etc/pam.d/common-password
+sed -n -i '25 a ucredit=-1 dcredit=-1 maxrepeat=3 usercheck=1 enforce_for_root'
+/etc/pam.d/common-password
