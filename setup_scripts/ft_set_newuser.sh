@@ -11,7 +11,7 @@
 ##############################################################################
 
 #!/bin/bash
-$NEW_USER=$1
+NEW_USER=$1
 cd /
 sudo useradd -m -s /bin/bash $NEW_USER
 sudo addgroup user42
