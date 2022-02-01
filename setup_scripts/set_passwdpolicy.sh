@@ -1,24 +1,31 @@
-##############################################################################
-#                                                                            #
-#                                                       :::      ::::::::    #
-#   set_passwdpolicy.sh                                :+:      :+:    :+:   #
-#                                                    +:+ +:+         +:+     #
-#   By: acesar-l <acesar-l@student.42sp.org.br     +#+  +:+       +#+        #
-#                                                +#+#+#+#+#+   +#+           #
-#   Created: 2022/01/31 01:24:19 by acesar-l          #+#    #+#             #
-#   Updated: 2022/01/31 01:24:22 by acesar-l         ###   ########.fr       #
-#                                                                            #
-##############################################################################
-
 #!/bin/bash
 
-FILE=/etc/pam.d/common-password
+#
+#                                                                            
+#                                                       :::      ::::::::    
+#   set_passwdpolicy.sh                                :+:      :+:    :+:   
+#                                                    +:+ +:+         +:+     
+#   By: acesar-l <acesar-l@student.42sp.org.br     +#+  +:+       +#+        
+#                                                +#+#+#+#+#+   +#+           
+#   Created: 2022/01/31 01:24:19 by acesar-l          #+#    #+#             
+#   Updated: 2022/01/31 01:24:22 by acesar-l         ###   ########.fr       
+#                                                                            
+#
+
+PAM=/etc/pam.d/common-password
+FILE=/etc/login.defs
+
 TXT=password_policy.txt
 
-sed -n '25 s/minlen=8/minlen=10/' $FILE
-sed -n '25 s/difok=3/difok=7/' $FILE
-sed -i '25 s/$/ maxrepeat=3 usercheck=1/' $FILE
-sed -i '25 s/$/ ucredit=-1 dcredit=-1 enforce_for_root/' $FILE
+sed -n '25 s/minlen=8/minlen=10/' $PAM
+sed -n '25 s/difok=3/difok=7/' $PAM
+sed -i '25 s/$/ maxrepeat=3 usercheck=1/' $PAM
+sed -i '25 s/$/ ucredit=-1 dcredit=-1 enforce_for_root/' $PAM
+
+sed -i '102 s/$/\/snap\/bin/' $FILE
+sed -i '160 s/99999/30/' $FILE
+sed -i '161 s/0/2/' $FILE
+
 touch $TXT
 
 echo "******************************************************************************" > $TXT
@@ -39,8 +46,18 @@ echo "* not part of the former password.                      |                 
 echo "*                                                       |                    *" >> $TXT
 echo "* The root password has to comply with this policy.     | enforce_for_root   *" >> $TXT
 echo "******************************************************************************" >> $TXT
-echo "*                  THIS SCRIPT WILL SELF-DESTRUCT                            *" >> $TXT
 echo "* You can change those configurations in /etc/pam.d/common-password line 25  *" >> $TXT
+echo "******************************************************************************" >> $TXT
+echo "* Your password has to expire every 30 day.             | PASS_MAX_DAYS 30   *" >> $TXT
+echo "*                                                       |                    *" >> $TXT
+echo "* The minimum number of days allowed before the         | PASS_MIN_DAYS 2    *" >> $TXT
+echo "* modification of a password will be set to 2.          |                    *" >> $TXT
+echo "*                                                       |                    *" >> $TXT
+echo "* The user has to receive a warning message 7 days      | PASS_WARN_AGE 7    *" >> $TXT
+echo "* before their password expire                          |                    *" >> $TXT
+echo "******************************************************************************" >> $TXT
+echo "*                      THIS SCRIPT WILL SELF-DESTRUCT                        *" >> $TXT
+echo "* You can change those configurations in /etc/login.defs lines 160 until 162 *" >> $TXT
 echo "******************************************************************************" >> $TXT
 
 find . -type f \( -name "set_passwdpolicy.sh"\) -delete
