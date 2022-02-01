@@ -16,8 +16,8 @@ DATE=`(date +'%a %b %d %T %Y')`
 
 LAST_BOOT=`(who -b | head -n 1 | awk '{ print $3, $4}')`
 PROCESSORS=`(cat /proc/cpuinfo | grep processor | wc -l)`
-IP_ADRESS=`(sudo ifconfig | grep 'broadcast' | awk '{ print $2 }')`
-MAC_ADRESS=`(sudo ifconfig | grep 'ether' | awk '{ print $2 }')`
+IP_ADDRESS=`(sudo ifconfig | grep 'broadcast' | awk '{ print $2 }')`
+MAC_ADDRESS=`(sudo ifconfig | grep 'ether' | awk '{ print $2 }')`
 
 echo "Broadcast message from root@$HOSTNAME (tty1)" \($DATE\)
 echo "  #Architecture:   "
@@ -30,5 +30,5 @@ echo "  #Last boot: "$LAST_BOOT
 echo "  #LVM use:        "
 echo "  #Connexions TCP: "
 echo "  #User log:       "
-echo "  Network: IP "$IP_ADDRESS \($MAC_ADDRESS\)
-echo "  Sudo:            "
+echo "  #Network: IP "$IP_ADDRESS \($MAC_ADDRESS\)
+echo "  #Sudo:            "
