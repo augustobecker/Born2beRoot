@@ -3,7 +3,7 @@
 #
 #                                                                            
 #                                                       :::      ::::::::    
-#   set_hostname.sh                                 :+:      :+:    :+:      
+#   set_hostname.sh                                    :+:      :+:    :+:      
 #                                                    +:+ +:+         +:+     
 #   By: acesar-l <acesar-l@student.42sp.org.br     +#+  +:+       +#+        
 #                                                +#+#+#+#+#+   +#+           
