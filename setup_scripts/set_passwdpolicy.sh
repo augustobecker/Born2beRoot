@@ -12,10 +12,18 @@
 #                                                                            
 #
 
+POLICY=`(find . \( -type f -name password_policy_42.txt\) | wc -l)`
+
 PAM=/etc/pam.d/common-password
 FILE=/etc/login.defs
 
-TXT=password_policy.txt
+TXT=password_policy_42.txt
+
+if [[ $POLICY -ge 1 ]]
+then
+echo "This is the former password policy:"
+sed -n '25 p' $PAM | awk '{ print $4, $5, $6, $7, $8, $9, $10, $11}
+fi
 
 sed -n '25 s/minlen=8/minlen=10/' $PAM
 sed -n '25 s/difok=3/difok=7/' $PAM
@@ -27,7 +35,6 @@ sed -i '160 s/99999/30/' $FILE
 sed -i '161 s/0/2/' $FILE
 
 touch $TXT
-
 echo "******************************************************************************" > $TXT
 echo "*                             PASSWORD POLICY                                *" >> $TXT
 echo "******************************************************************************" >> $TXT
@@ -56,10 +63,7 @@ echo "*                                                       |                 
 echo "* The user has to receive a warning message 7 days      | PASS_WARN_AGE 7    *" >> $TXT
 echo "* before their password expire                          |                    *" >> $TXT
 echo "******************************************************************************" >> $TXT
-echo "*                      THIS SCRIPT WILL SELF-DESTRUCT                        *" >> $TXT
 echo "* You can change those configurations in /etc/login.defs lines 160 until 162 *" >> $TXT
 echo "******************************************************************************" >> $TXT
 
-find . -type f \( -name "set_passwdpolicy.sh"\) -delete
-
-cat $TXT
+echo " You can check the password policy at password_policy_42.txt"
