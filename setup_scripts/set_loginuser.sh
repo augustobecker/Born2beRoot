@@ -14,6 +14,7 @@
 
 LOGIN42=acesar-l
 
+sudo useradd -m -s /bin/bash $LOGIN42
 sudo addgroup user42
 sudo usermod -aG user42 $LOGIN42
 sudo usermod -aG sudo $LOGIN42
