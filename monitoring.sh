@@ -12,6 +12,9 @@
 #                                                                            
 # 
 
+CRON=`(find . \( -type f -name job_scheduler\) | wc -l)`
+PWD=`(pwd)`
+
 INFO=monitoring.txt
 
 ARCHITECTURE=`(uname -a)`
@@ -22,6 +25,12 @@ IP_ADDRESS=`(sudo ifconfig | grep 'broadcast' | awk '{ print $2 }')`
 MAC_ADDRESS=`(sudo ifconfig | grep 'ether' | awk '{ print $2 }')`
 LVM_USE=`(grep "/dev/mapper" /etc/fstab | wc -l)`
 COMMANDS_EXECUTED=`(grep "COMMAND=" /var/log/sudo/sudo.log | wc -l)`
+
+if [[ $CRON -ge 1 ]]
+then
+touch job_scheduler
+echo "*/10 * * * * "$PWD"/monitoring.sh"
+fi
 
 touch INFO
 
@@ -46,3 +55,5 @@ echo "  #Network: IP "$IP_ADDRESS \($MAC_ADDRESS\) >> $INFO
 echo "  #Sudo: "$COMMANDS_EXECUTED cmd >> $INFO
 
 wall INFO
+
+rm INFO
