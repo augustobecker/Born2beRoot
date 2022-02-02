@@ -12,7 +12,8 @@
 #                                                                            
 # 
 
-DATE=`(date +'%a %b %d %T %Y')`
+INFO=monitoring.txt
+
 ARCHITECTURE=`(uname -a)`
 PHYSICAL_CPU=`(grep "physical id" /proc/cpuinfo | sort -u | wc -l)`
 VIRTUAL_CPU=`(grep "processor" /proc/cpuinfo | sort -u | wc -l)`
@@ -22,23 +23,26 @@ MAC_ADDRESS=`(sudo ifconfig | grep 'ether' | awk '{ print $2 }')`
 LVM_USE=`(grep "/dev/mapper" /etc/fstab | wc -l)`
 COMMANDS_EXECUTED=`(grep "COMMAND=" /var/log/sudo/sudo.log | wc -l)`
 
-echo "Broadcast message from root@$HOSTNAME (tty1)" \($DATE\)
-echo "  #Architecture: "$ARCHITECTURE
-echo "  #CPU Physical: "$PHYSICAL_CPU
-echo "  #vCPU: "$VIRTUAL_CPU
-echo "  #Memory Usage: "
-echo "  #Disk Usage: "
-echo "  #CPU load: "
-echo "  #Last boot: "$LAST_BOOT
+touch INFO
+
+echo "  #Architecture: "$ARCHITECTURE >> $INFO
+echo "  #CPU Physical: "$PHYSICAL_CPU >> $INFO
+echo "  #vCPU: "$VIRTUAL_CPU >> $INFO
+echo "  #Memory Usage: " >> $INFO
+echo "  #Disk Usage: " >> $INFO
+echo "  #CPU load: " >> $INFO
+echo "  #Last boot: "$LAST_BOOT >> $INFO
 
 if [[ $LVM_USE -ge 1 ]]
 then
-echo "  #LVM use: yes"
+echo "  #LVM use: yes" >> $INFO
 else
-echo "  #LVM use: no"
+echo "  #LVM use: no" >> $INFO
 fi
 
-echo "  #Connexions TCP: "
-echo "  #User log: "
-echo "  #Network: IP "$IP_ADDRESS \($MAC_ADDRESS\)
-echo "  #Sudo: "$COMMANDS_EXECUTED cmd
+echo "  #Connexions TCP: " >> $INFO
+echo "  #User log: " >> $INFO
+echo "  #Network: IP "$IP_ADDRESS \($MAC_ADDRESS\) >> $INFO
+echo "  #Sudo: "$COMMANDS_EXECUTED cmd >> $INFO
+
+wall INFO
