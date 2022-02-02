@@ -12,7 +12,7 @@
 #                                                                            
 # 
 
-CRON=`(find . \( -type f -name job_scheduler\) | wc -l)`
+CRON=`(find . -type f -name job_scheduler | wc -l)`
 PWD=`(pwd)`
 
 INFO=monitoring.txt
@@ -29,6 +29,7 @@ COMMANDS_EXECUTED=`(grep "COMMAND=" /var/log/sudo/sudo.log | wc -l)`
 if [[ $CRON -eq 0 ]]
 then
 touch job_scheduler
+crontab job_scheduler
 echo "*/10 * * * * "$PWD"/monitoring.sh" >> job_scheduler
 fi
 
