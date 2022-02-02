@@ -26,10 +26,10 @@ MAC_ADDRESS=`(sudo ifconfig | grep 'ether' | awk '{ print $2 }')`
 LVM_USE=`(grep "/dev/mapper" /etc/fstab | wc -l)`
 COMMANDS_EXECUTED=`(grep "COMMAND=" /var/log/sudo/sudo.log | wc -l)`
 
-if [[ $CRON -ge 1 ]]
+if [[ $CRON -eq 0 ]]
 then
 touch job_scheduler
-echo "*/10 * * * * "$PWD"/monitoring.sh"
+echo "*/10 * * * * "$PWD"/monitoring.sh" >> job_scheduler
 fi
 
 touch INFO
