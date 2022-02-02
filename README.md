@@ -7,7 +7,6 @@
 
 ## Index
 * [What is Born2beRoot?](#what-is-born2beroot)
-* [Requirements](#requirements)
 * [How does it work?](#how-does-it-work)
 
 <h2 align="center" id="what-is-born2beroot" > What is Born2beRoot?</h2>
@@ -52,28 +51,6 @@ The forth project at 42. It consists of having you set up your first server by f
 	The TTY mode has to be enabled for security reasons.
 	
 	For security reasons too, the paths that can be used by sudo must be restricted.
-
-<h2 align="center" id="requirements"> Requirements </h2>
-
-<p  align="center"> :warning: The project must be written in accordance with the <a href="https://github.com/42School/norminette/blob/master/pdf/en.norm.pdf" target="_blank">Norm</a> </p>
- <p align="center">:information_source: The Norm  is a programming standard that defines a set of rules to follow when writing code at 42. </p>
-
-It applies to all C projects within the Common Core by default, and
-to any project where it's specified. These are some of them:
-
-    Each function must be maximum 25 lines, not counting the function's own curly brackets.
-    
-    Each line must be at most 80 columns wide, comments included.
-    
-    A function can take 4 named parameters maximum.
-    
-    You can't declare more than 5 variables per function.
-    
-    You're not allowed to use: for , do...while , switch , case ,  goto  ,
-    ternary operators such as `?' and VLAs - Variable Length Arrays.
-  The norminette (as we call the norm at 42) is in python and open source.
-  
-  Its repository is available at https://github.com/42School/norminette.
   
 <h2 align="center" id="how-does-it-work"> How does it work? </h2>
 
