@@ -1,5 +1,5 @@
 <h1 align="center"> Born2beRoot - @42sp</h1>
-<p align="center">:information_source: Basic Debian GNU/Linux server setup and configuration on a VM.</p>
+<p align="center">:information_source: Debian GNU/Linux server setup and configuration on a VM, with some scripts too.</p>
 
 <p align="center"><a href="https://www.42sp.org.br/" target="_blank"><img src="https://img.shields.io/static/v1?label=&message=SP&color=000&style=for-the-badge&logo=42""></a></p>
 <p align="center"><a href="https://github.com/augustobecker/Born2beRoot/blob/main/README-ptbr.md" target="_blank"><img src="https://img.shields.io/badge/dispon%C3%ADvel%20tamb%C3%A9m%20em-PT--BR-yellow"></a></p>
@@ -10,7 +10,7 @@
 * [How does it work?](#how-does-it-work)
 
 <h2 align="center" id="what-is-born2beroot" > What is Born2beRoot?</h2>
-The forth project at 42. It consists of having you set up your first server by following specific rules.
+The forth project at 42. It consists of having you set up your first server by following specific rules, develop a sricpt to display important system informations and turn in a signature.txt file at the root of your repository (You must paste in it the signature of your machine’s virtual disk).
 
 <h3 align="center">:bookmark_tabs: The Rules: </h3>
 
