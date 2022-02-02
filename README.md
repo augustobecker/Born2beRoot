@@ -7,12 +7,18 @@
 
 ## Index
 * [What is Born2beRoot?](#what-is-born2beroot)
+	* [The Rules](#the-rules)
 * [How does it work?](#how-does-it-work)
+	* [The Scripts](#the-scripts)
+		* [Setup](#setup-scripts)
+		* [monitoring.sh](#monitoring-sh)
+		* [Evaluation](#evaluation-scripts)
+* [How do I evaluate a Born2beRoot?](#how-evaluate)
 
 <h2 align="center" id="what-is-born2beroot" > What is Born2beRoot?</h2>
 The forth project at 42. It consists of having you set up your first server by following specific rules, develop a sricpt to display important system informations and turn in a signature.txt file at the root of your repository (You must paste in it the signature of your machine’s virtual disk).
 
-<h3 align="center">:bookmark_tabs: The Rules: </h3>
+<h3 align="center" id="the-rules">:bookmark_tabs: The Rules: </h3>
 
 :small_blue_diamond: Create at least 2 encrypted partitions using LVM.
 
