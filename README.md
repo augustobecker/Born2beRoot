@@ -14,6 +14,7 @@
 		* [monitoring.sh](#monitoring-sh)
 		* [Evaluation](#evaluation-scripts)
 * [How do I evaluate a Born2beRoot?](#how-evaluate)
+* [Author](#author)
 
 <h2 align="center" id="what-is-born2beroot" > What is Born2beRoot?</h2>
 The forth project at 42. It consists of having you set up your first server by following specific rules, develop a sricpt to display important system informations and turn in a signature.txt file at the root of your repository (You must paste in it the signature of your machine’s virtual disk).
@@ -55,8 +56,20 @@ The forth project at 42. It consists of having you set up your first server by f
 	has to be saved in the /var/log/sudo/ folder.
 	
 	The TTY mode has to be enabled for security reasons.
-	
+
 	For security reasons too, the paths that can be used by sudo must be restricted.
   
 <h2 align="center" id="how-does-it-work"> How does it work? </h2>
 
+<h2 align="center" id="author"> Author </h2>
+<div>
+<img height="180em" src="https://user-images.githubusercontent.com/81205527/152089472-0aa06bd9-d882-4c83-adfc-8230d1e958c1.png">
+    
+<strong> Augusto Becker | acesar-l | 🇧🇷👨‍🚀</strong>
+    
+:wave: How to reach me: 
+    
+  <a href = "mailto:augustobecker.dev@gmail.com"><img src="https://img.shields.io/badge/augustobecker.dev@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white"> </a>
+  <a href="https://www.linkedin.com/in/augusto-becker/" target="_blank"><img src="https://img.shields.io/badge/-Augusto Becker-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
+  <a href="https://www.instagram.com/augusto.becker/" target="_blank"><img src="https://img.shields.io/badge/-augusto.becker-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a>
+</div>
