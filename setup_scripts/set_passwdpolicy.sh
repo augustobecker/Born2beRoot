@@ -12,17 +12,15 @@
 #                                                                            
 #
 
-POLICY=`(find . \( -type f -name password_policy_42.txt\) | wc -l)`
-
-PAM=/etc/pam.d/common-password
-FILE=/etc/login.defs
-
-TXT=password_policy_42.txt
+  POLICY=$(find . -type f -name password_policy_42.txt | wc -l)
+     PAM="/etc/pam.d/common-password"
+    FILE="/etc/login.defs"
+     TXT=password_policy_42.txt
 
 if [[ $POLICY -ge 1 ]]
 then
 echo "This is the former password policy:"
-sed -n '25 p' $PAM | awk '{ print $4, $5, $6, $7, $8, $9, $10, $11}
+sed -n '25 p' $PAM | awk '{ print $4, $5, $6, $7, $8, $9, $10, $11}'
 fi
 
 sed -n '25 s/minlen=8/minlen=10/' $PAM
