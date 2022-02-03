@@ -11,9 +11,6 @@
 #   Updated: 2021/02/01 17:00:41 by acesar-l         ###   ########.fr       
 #                                                                            
 # 
-
-             CRON=$(find . -type f -name job_scheduler | wc -l)
-              PWD=$(pwd)
               
      ARCHITECTURE=$(uname -a)
      PHYSICAL_CPU=$(grep "physical id" /proc/cpuinfo | sort -u | wc -l)
@@ -29,13 +26,6 @@
        IP_ADDRESS=$(sudo ifconfig | grep 'broadcast' | awk '{ print $2 }')
       MAC_ADDRESS=$(sudo ifconfig | grep 'ether' | awk '{ print $2 }')
 COMMANDS_EXECUTED=$(grep "COMMAND=" /var/log/sudo/sudo.log | wc -l)
-
-if [[ $CRON -eq 0 ]]
-then
-touch job_scheduler
-crontab job_scheduler
-echo "*/10 * * * * "$PWD"/monitoring.sh" >> job_scheduler
-fi
 
 wall " #Architecture: $ARCHITECTURE
 #CPU Physical: $PHYSICAL_CPU
