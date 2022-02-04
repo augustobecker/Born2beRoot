@@ -23,8 +23,8 @@ echo "This is the former password policy:"
 sed -n '25 p' $PAM | awk '{ print $4, $5, $6, $7, $8, $9, $10, $11}'
 fi
 
-sed -n '25 s/minlen=8/minlen=10/' $PAM
-sed -n '25 s/difok=3/difok=7/' $PAM
+sed -i '25 s/minlen=8/minlen=10/' $PAM
+sed -i '25 s/difok=3/difok=7/' $PAM
 sed -i '25 s/$/ maxrepeat=3 usercheck=1/' $PAM
 sed -i '25 s/$/ ucredit=-1 dcredit=-1 enforce_for_root/' $PAM
 
