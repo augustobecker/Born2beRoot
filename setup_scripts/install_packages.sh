@@ -17,3 +17,4 @@ apt-get install vim
 apt-get install libpam-cracklib
 apt-get install lvm2
 apt-get install net-tools -y
+apt-get install openssh-server
