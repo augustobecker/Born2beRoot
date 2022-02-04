@@ -1,55 +1,69 @@
 <h1 align="center"> Born2beRoot - @42sp</h1>
-<p align="center">:information_source: Basic Debian GNU/Linux server setup and configuration on a VM.</p>
+<p align="center">:information_source: Setup de um servidor Debian GNU/Linux em uma VM e mais alguns scripts úteis.</p>
 
 <p align="center"><a href="https://www.42sp.org.br/" target="_blank"><img src="https://img.shields.io/static/v1?label=&message=SP&color=000&style=for-the-badge&logo=42""></a></p>
 <p align="center"><a href="https://github.com/augustobecker/Born2beRoot/blob/main/README.md"><img src="https://img.shields.io/badge/available%20in-EN-blue"></a></p>
 
-## Index
-* [What is Born2beRoot?](#what-is-born2beroot)
-* [How does it work?](#how-does-it-work)
+## Índice
+* [O que é Born2beRoot?](#o-que-e-born2beroot)
+* [Como funciona?](#como-funciona)
+	* [As Regras](#as-regras)
+* [Autor?](#autor)
 
-<h2 align="center" id="what-is-born2beroot" > What is Born2beRoot?</h2>
-The forth project at 42. It consists of having you set up your first server by following specific rules.
+<h2 align="center" id="o-que-e-born2beroot" > O que é Born2beRoot?</h2>
+O quarto projeto no Instituto 42. Consiste em configurar o seu primeiro servidor seguindo algumas regras específicas.
 
-<h3 align="center">:bookmark_tabs: The Rules: </h3>
+<h3 align="center" id="as-regras">:bookmark_tabs: As Regras: </h3>
 
-:small_blue_diamond: Create at least 2 encrypted partitions using LVM.
+:small_blue_diamond: Crie pelo menos 2 partições encriptadas usando LVM.
 
-:small_blue_diamond: The hostname of the virtual machine must be acesar-l42 and I have to modify this hostname during a peer-evaluation.
+:small_blue_diamond: O hostname da sua máquina virtual deve ser acesar-l42 e você deve modificar esse hostname durante uma avaliação por pares.
 
-:small_blue_diamond: In addition to the root user, a user with your acesar-l as username has to be present, and this user has to belong to the user42 and sudo groups.
+:small_blue_diamond: Além do usuário root, um usuário com nome acesar-l deve estar presente e pertencer aos grupos user42 e sudo.
 
-:small_blue_diamond: Implement a strong password policy, that consists of:
+:small_blue_diamond: Implemente uma dura política de senhas, que consiste em:
 
-	The password has to expire every 30 days.
+	A senha deve expirar a cada 30 dias.
 	
-	The minimum number of days allowed before the modification of a password will be set to 2.
+	O mínimo de dias permitidos antes da mudança de uma senha deve ser configurado para 2.
 	
-	The user has to receive a warning message 7 days before their password expires.
+	O usuário deve receber uma mensagem de alerta 7 dias antes da sua senha expirar.
 	
-	The password must be at least 10 characters long. It must contain an uppercase letter and a number.
-	Also, it must not contain more than 3 consecutive identical characters.
+	A senha deve ter pelo menos 10 caracteres. Deve conter uma letra maiúscula e um número.
+	Também, não deve conter mais que 3 caracteres idênticos repetidos.
 	
-	The password must not include the name of the user.
+	A senha não deve conter o nome do usuário.
 	
-	The following rule does not apply to the root password: The password must have at least 7 characters
-	that are not part of the former password.
+	A regra a seguir não se aplica a senha do root: A senha deve conter pelo menos 7 caracteres que não
+	são parte da senha atual.
 	
-	 Of course, your root password has to comply with this policy.
+	Obviamente, sua senha do root deve cumprir com essa política.
 	
-:small_blue_diamond: Install and configure sudo following strict rules.
+:small_blue_diamond: Instale e configure o sudo seguindo regras rígidas:
 
-	Authentication using sudo has to be limited to 3 attempts in the event of an incorrect password.
+	Autenticação usando o sudo deve ser limitada a 3 tentativas na ocorrência de uma senha incorreta.
 	
-	A custom message of your choice has to be displayed if an error due to a wrong 
-	password occurs when using sudo.
+	Uma mensagem customizada, de sua escolha, deve ser exibida no caso de um erro de
+	senha quando usando sudo.
 	
-	Each action using sudo has to be archived, both inputs and outputs. The log file
-	has to be saved in the /var/log/sudo/ folder.
+	Cada comando usando o sudo deve ser arquivado, tanto input quanto output. O arquivo log
+	deve ser salvo na pasta /var/log/sudo/.
 	
-	The TTY mode has to be enabled for security reasons.
+	Por razões de segurança o modo TTY deve estar ativado.
 	
-	For security reasons too, the paths that can be used by sudo must be restricted.
+	Por razões de segurança também, os caminhos que podem ser usados pelo sudo devem ser restritos.
   
-<h2 align="center" id="how-does-it-work"> How does it work? </h2>
+<h2 align="center" id="como-funciona"> Como funciona? </h2>
 
+<h2 align="center" id="autor"> Autor </h2>
+<div>
+<img height="180em" src="https://user-images.githubusercontent.com/81205527/152089472-0aa06bd9-d882-4c83-adfc-8230d1e958c1.png">
+    
+<strong> Augusto Becker | acesar-l | 🇧🇷👨‍🚀</strong>
+    
+:wave: Fale comigo: 
+    
+  <a href = "mailto:augustobecker.dev@gmail.com"><img src="https://img.shields.io/badge/augustobecker.dev@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white"> </a>
+  <a href="https://www.linkedin.com/in/augusto-becker/" target="_blank"><img src="https://img.shields.io/badge/-Augusto Becker-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
+  <a href="https://www.instagram.com/augusto.becker/" target="_blank"><img src="https://img.shields.io/badge/-augusto.becker-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a>
+</div>
