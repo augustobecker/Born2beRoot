@@ -12,6 +12,7 @@
 #                                                                            
 # 
 
+  IP=`(ip addr show | awk '{print $2}' | sed -n '9p')`
 PORT="4242"
 
 echo ssh $USER@$IP -p $PORT
