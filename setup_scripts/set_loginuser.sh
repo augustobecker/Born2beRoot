@@ -13,8 +13,8 @@
 #
 
      LOGIN42=acesar-l
-  LOGIN_USER=$(cat /etc/passwd | grep acesar-l: | wc -l)
-LOGIN_GROUPS=$(groups acesar-l | grep sudo | grep user42)
+  LOGIN_USER=$(cat /etc/passwd | grep "$LOGIN42:" | wc -l)
+LOGIN_GROUPS=$(groups $LOGIN42 | grep sudo | grep user42)
  CREATE_USER=$(sudo useradd -m -s /bin/bash $LOGIN42)
 USER42_GROUP=$(getent group | grep user42: | wc -l)
  
