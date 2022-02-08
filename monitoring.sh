@@ -23,7 +23,7 @@
           LVM_USE=$(if [ $LVM -ge 1 ]; then echo yes; else echo no; fi)
               TCP=$()
          USER_LOG=$()
-       IP_ADDRESS=$(sudo ifconfig | grep 'broadcast' | awk '{ print $2 }')
+       IP_ADDRESS=$(hostname -I | awk '{ print $1 }')
       MAC_ADDRESS=$(sudo ifconfig | grep 'ether' | awk '{ print $2 }')
 COMMANDS_EXECUTED=$(grep "COMMAND=" /var/log/sudo/sudo.log | wc -l)
 
