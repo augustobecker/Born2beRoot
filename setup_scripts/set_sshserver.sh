@@ -14,7 +14,7 @@
 
       SSH='/etc/ssh/sshd_config'
   NETWORK='/etc/network/interfaces'
-       IP=$(hostname -I)
+       IP=$(hostname -I | awk '{print $1}')
  NET_MASK=$()
   GATEWAY=$(nmcli dev show | grep 'IP4.GATEWAY' | sed -n '1p' | awk '{print $2}')
 BROADCAST=$(ip addr show | awk '{print $4}' | sed -n '9p')
