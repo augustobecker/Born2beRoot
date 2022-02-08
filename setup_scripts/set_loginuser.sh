@@ -18,8 +18,8 @@ LOGIN_GROUPS=$(groups $LOGIN42 | grep sudo | grep user42)
  CREATE_USER=$(sudo useradd -m -s /bin/bash $LOGIN42)
 USER42_GROUP=$(getent group | grep user42: | wc -l)
  
-if [ $LOGIN_USER -ge 1 ]; then $CREATE_USER; fi)
-if [ $USER42_GROUP -ge 1 ]; then addgroup user42; fi)
+if [ $LOGIN_USER -ge 1 ]; then $CREATE_USER; fi
+if [ $USER42_GROUP -ge 1 ]; then addgroup user42; fi
 sudo usermod -aG user42 $LOGIN42
 sudo usermod -aG sudo $LOGIN42
 
