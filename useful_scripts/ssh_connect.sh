@@ -12,7 +12,7 @@
 #                                                                            
 # 
 
-  IP=$(hostname -I)
+  IP=$(hostname -I | awk '{ print $1 }')
 PORT="4242"
 
 echo ssh $USER@$IP -p $PORT
