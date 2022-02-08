@@ -12,10 +12,7 @@
 #                                                                            
 # 
 
-USER=$1
-
 head -n 2 /etc/os-release
-cd /home/$USER
 /usr/sbin/aa-status
 ss -tunip
 /usr/sbin/ufw status
