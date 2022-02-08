@@ -14,10 +14,9 @@
 
       SSH='/etc/ssh/sshd_config'
   NETWORK='/etc/network/interfaces'
-
-      IP=$(hostname -I)
-NET_MASK=$()
- GATEWAY=$()
+       IP=$(hostname -I)
+ NET_MASK=$()
+  GATEWAY=$(nmcli dev show | grep 'IP4.GATEWAY' | sed -n '1p' | awk '{print $2}')
 BROADCAST=$(ip addr show | awk '{print $4}' | sed -n '9p')
 
 sed -i 's/#Port 22/Port 4242/g'                  $SSH
@@ -29,8 +28,8 @@ sudo service ssh status
 echo "To connect via SSH from other terminal:"
 echo ssh $USER@$IP -p 4242
 
-sed -i '11 s/allow-hotplug/auto/g'      $NETWORK
-sed -i '12 s/dhcp/static/g'             $NETWORK
+sed -i '11 s/allow-hotplug/auto/g'     $NETWORK
+sed -i '12 s/dhcp/static/g'            $NETWORK
 echo "      address "$IP            >> $NETWORK
 echo "      broadcast "$NET_MASK    >> $NETWORK
 echo "      netmask "$NET_MASK      >> $NETWORK
