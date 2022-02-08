@@ -15,8 +15,12 @@
  ARCHITECTURE=$(uname -a)
  PHYSICAL_CPU=$(grep "physical id" /proc/cpuinfo | sort -u | wc -l)
   VIRTUAL_CPU=$(grep "processor" /proc/cpuinfo | sort -u | wc -l)
- MEMORY_USAGE=$()
-   DISK_USAGE=$()
+  MEMORY_USED=$(free -m | grep "Mem:" | awk '{ print $3 }')
+ MEMORY_TOTAL=$(free -m | grep "Mem:" | awk '{ print $2 }')
+ MEMORY_PERCN=$(free -m | grep "Mem:" | awk '{ printf("%.2f"), $2/$3*100 }')
+    DISK_USED=$()
+   DISK_TOTAL=$()
+  DISK_PERCNT=$()
      CPU_LOAD=$()
     LAST_BOOT=$(who -b | head -n 1 | awk '{ print $3, $4}')
           LVM=$(lsblk | grep "lvm" | wc -l)
@@ -30,12 +34,12 @@ COMMANDS_EXEC=$(grep "COMMAND=" /var/log/sudo/sudo.log | wc -l)
 wall "	#Architecture: $ARCHITECTURE
 		#CPU Physical: $PHYSICAL_CPU
 		#vCPU: $VIRTUAL_CPU
-		#Memory Usage: $MEMORY_USAGE
-		#Disk Usage: $DISK_USAGE
+		#Memory Usage: $MEMORY_USED/$MEMORY_TOTAL MB (MEMORY_PERCN%)
+		#Disk Usage: $DISK_USED/$DISK_TOTAL Gb (DISK_PERCNT%)
 		#CPU load: $CPU_LOAD
 		#Last boot: $LAST_BOOT
 		#LVM use: $LVM_USE
 		#Connexions TCP: $TCP_CONX ESTABLISHED
 		#User log: $USER_LOG
-		#Network: IP $IP_ADDRESS \($MAC_ADDRESS\)
+		#Network: IP $IP_ADDRESS ($MAC_ADDRESS)
 		#Sudo: $COMMANDS_EXECUTED cmd"
