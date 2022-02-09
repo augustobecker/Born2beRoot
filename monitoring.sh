@@ -42,4 +42,4 @@ wall "	#Architecture: $ARCHITECTURE
 	#Connexions TCP: $TCP_CONX ESTABLISHED
 	#User log: $USER_LOG
 	#Network: IP $IP_ADDRESS ($MAC_ADDRESS)
-	#Sudo: $COMMANDS_EXECUTED cmd"
+	#Sudo: $COMMANDS_EXEC cmd"
