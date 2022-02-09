@@ -15,9 +15,7 @@
  ARCHITECTURE=$(uname -a)
  PHYSICAL_CPU=$(grep "physical id" /proc/cpuinfo | sort -u | wc -l)
   VIRTUAL_CPU=$(grep "processor" /proc/cpuinfo | sort -u | wc -l)
-  MEMORY_USED=$(free -m | grep "Mem:" | awk '{ print $3 }')
- MEMORY_TOTAL=$(free -m | grep "Mem:" | awk '{ print $2 }')
- MEMORY_PERCN=$(free -m | grep "Mem:" | awk '{ printf("%.2f"), $3/$2*100 }')
+   RAM_PERCNT=$(free -m | grep "Mem:" | awk '{ printf"%d/%d% MB (%.2f%%)", $3/$2*100 }')
     DISK_USED=$(df -m --total | grep "total" | awk '{ print $3 }')
    DISK_TOTAL=$(df --total -BG | grep "total" | awk '{ print $2 }')
   DISK_PERCNT=$(df -m --total | grep "total" | awk '{ print $5 }')
@@ -34,7 +32,7 @@ COMMANDS_EXEC=$(grep "COMMAND=" /var/log/sudo/sudo.log | wc -l)
 wall "	#Architecture: $ARCHITECTURE
 	#CPU Physical: $PHYSICAL_CPU
 	#vCPU: $VIRTUAL_CPU
-	#Memory Usage: $MEMORY_USED/${MEMORY_TOTAL}MB ($MEMORY_PERCN%)
+	#Memory Usage: $RAM_PERCNT
 	#Disk Usage: $DISK_USED/${DISK_TOTAL}b ($DISK_PERCNT)
 	#CPU load: $CPU_LOAD
 	#Last boot: $LAST_BOOT
