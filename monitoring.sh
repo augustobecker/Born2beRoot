@@ -28,7 +28,7 @@
      TCP_CONX=$(netstat -nat | grep ESTABLISHED | wc -l)
      USER_LOG=$(users | wc -w)
    IP_ADDRESS=$(hostname -I | awk '{ print $1 }')
-  MAC_ADDRESS=$(sudo ifconfig | grep 'ether' | awk '{ print $2 }')
+  MAC_ADDRESS=$(ip link show | grep 'ether' | awk '{ print $2 }')
 COMMANDS_EXEC=$(grep "COMMAND=" /var/log/sudo/sudo.log | wc -l)
 
 wall "	#Architecture: $ARCHITECTURE
@@ -41,5 +41,5 @@ wall "	#Architecture: $ARCHITECTURE
 	#LVM use: $LVM_USE
 	#Connexions TCP: $TCP_CONX ESTABLISHED
 	#User log: $USER_LOG
-	#Network: IP $IP_ADDRESS ($MAC_ADDRESS)
+	#Network: IP $IP_ADDRESS (${MAC_ADDRESS})
 	#Sudo: $COMMANDS_EXEC cmd"
