@@ -15,7 +15,7 @@
  ARCHITECTURE=$(uname -a)
  PHYSICAL_CPU=$(grep "physical id" /proc/cpuinfo | sort -u | wc -l)
   VIRTUAL_CPU=$(grep "processor" /proc/cpuinfo | sort -u | wc -l)
-   RAM_PERCNT=$(free -m | grep "Mem:" | awk '{ printf"%d/%d% MB (%.2f%%)", $3/$2*100 }')
+   RAM_PERCNT=$(free -m | grep "Mem:" | awk '{ printf"%d/%dMB (%.2f%%)", $3, $2, $3/$2*100 }')
     DISK_USED=$(df -m --total | grep "total" | awk '{ print $3 }')
    DISK_TOTAL=$(df --total -BG | grep "total" | awk '{ print $2 }')
   DISK_PERCNT=$(df -m --total | grep "total" | awk '{ print $5 }')
