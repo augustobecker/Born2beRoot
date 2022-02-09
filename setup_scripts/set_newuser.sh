@@ -17,7 +17,7 @@
 GROUP_CHECK=$(getent group | grep "$GROUP:" | wc -l)
 
 sudo useradd -m -s /bin/bash $NEW_USER
-if [ $GROUP_CHECK -ge 1 ]; then addgroup $GROUP; fi
+if [ $GROUP_CHECK -ge 1 ]; then sudo addgroup $GROUP; fi
 sudo usermod -aG $GROUP $NEW_USER
 sudo passwd -n 2 -x 30 -w 7 $NEW_USER
 
