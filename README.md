@@ -60,7 +60,15 @@ The forth project at 42. It consists of having you set up your first server by f
 	For security reasons too, the paths that can be used by sudo must be restricted.
   
 <h2 align="center" id="how-does-it-work"> How does it work? </h2>
+	
+<h3 align="center" id="the-scripts"> The Scripts </h3>
+	
+<h4 align="center" id="setup-scripts"> Setup Scripts </h2>
+	
+<h4 align="center" id="monitoring-sh"> monitoring.sh </h2>
 
+<h4 align="center" id="evaluation-scripts"> Evaluation Scripts </h2>
+	
 <h2 align="center" id="author"> Author </h2>
 <div>
 <img height="180em" src="https://user-images.githubusercontent.com/81205527/152089472-0aa06bd9-d882-4c83-adfc-8230d1e958c1.png">
