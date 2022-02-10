@@ -6,12 +6,18 @@
 
 ## Índice
 * [O que é Born2beRoot?](#o-que-e-born2beroot)
-* [Como funciona?](#como-funciona)
 	* [As Regras](#as-regras)
+* [Como funciona?](#como-funciona)
+	* [The Scripts](#scripts)
+		* [Setup](#setup-scripts)
+		* [monitoring.sh](#monitoring-sh)
+		* [Evaluation](#scripts-aval)
+* [Como avaliar um Born2beRoot?](#como-avaliar)
 * [Autor?](#autor)
 
 <h2 align="center" id="o-que-e-born2beroot" > O que é Born2beRoot?</h2>
-O quarto projeto no Instituto 42. Consiste em configurar o seu primeiro servidor seguindo algumas regras específicas.
+O quarto projeto no Instituto 42. Consiste em configurar o seu primeiro servidor seguindo algumas regras específicas, desenvolver um script que mostra informações
+relevantes do sistema e submter no repositório git da 42 somente um arquivo signature.txt contendo a assinatura do Disco Virtual (vdi) da VM.
 
 <h3 align="center" id="as-regras">:bookmark_tabs: As Regras: </h3>
 
@@ -55,6 +61,59 @@ O quarto projeto no Instituto 42. Consiste em configurar o seu primeiro servidor
   
 <h2 align="center" id="como-funciona"> Como funciona? </h2>
 
+Para momento de fazer o setup do servidor (Após a instalação da VM e do servidor Debian nela), fiz questão de criar alguns scripts
+para facilitar bastante o processo - sinta-se livre para alterar segundo sua necessidade.
+
+<h3 align="center" id="scripts"> Scripts </h3>
+	
+Os dividi em 4 categorias: 
+	
+**Setup Scripts** - Feitos para ser usados apenas uma vez, durante a configuração (do firewall ou
+servidor ssh, por exemplo). Eles trocam algumas configurações padrão por outras definidas no script, então se
+tentar utilizar novamente eles podem simplesmente não fazer nada, adicionar um texto extra desnecessário
+ou trocar uma configuração que não era a pretendida.
+	
+**Useful Scripts** - Scripts que podem ser reutilizados e usados no dia a dia de um servidor. Coisas
+como mudar o hostname ou mostrar como se conectar com a máquina via SSH.
+	
+**monitoring.sh** - Script pedido pelo subject, deve mostrar algumas informações relevantes do sistema a cada 10 minutos
+em todos os terminais.
+	
+**Evaluation Scripts** - Scripts que facilitam o trabalho do avaliador do projeto na 42, mostrando algumas configurações do servidor e
+os requisitos do sujetct. 
+	
+<h4 align="center" id="setup-scripts"> Scripts de Setup </h2>
+	
+• <a href="https://github.com/augustobecker/Born2beRoot/blob/main/setup_scripts/install_packages.sh">install_packages.sh</a> - Instala todos os pacotes necessários para
+os outros scripts e para as outras ações requeridas pelo subject.
+	
+• <a href="https://github.com/augustobecker/Born2beRoot/blob/main/setup_scripts/set_firewall.sh">set_firewall.sh</a> - Configura o firewall UFW (uncomplicated firewall),
+libera a porta 4242(requerido pelo subject) e mostra seu status.
+	
+• <a href="https://github.com/augustobecker/Born2beRoot/blob/main/setup_scripts/set_loginuser.sh">set_loginuser.sh</a> - Cria, caso necessário, o usuário com o login
+da intra e o adiciona aos grupos sudo e user42(caso não esteja presente é criado) e ainda aplica parte da política de senhas ao usuário.
+	
+• <a href="https://github.com/augustobecker/Born2beRoot/blob/main/setup_scripts/set_newuser.sh">set_newuser.sh</a> - Cria um novo usuário, o coloca no grupo escolhido (caso não esteja presente é criado) e ainda aplica parte da política de senhas ao usuário. O script deve ser executado seguido do nome do novo usuário e do grupo. 
+	Por exemplo:
+	
+	./set_newuser.sh becker familia_becker
+	Em que becker é o novo usuário e familia_becker o grupo a qual ele vai ser adicionado.
+	
+• <a href="https://github.com/augustobecker/Born2beRoot/blob/main/setup_scripts/set_passwdpolicy.sh">set_passwdpolicy.sh</a> - Aplica a política de senhas requerida pelo subject, mas parte dela apenas para novos usuários.
+Para atualizar um usuário criado antes para também estar sob essa política basta rodar o comando:
+	
+	sudo passwd -n 2 -x 30 -w 7 ${OLD_USER}
+	
+• <a href="https://github.com/augustobecker/Born2beRoot/blob/main/setup_scripts/set_sshserver.sh">set_sshserver.sh</a>
+	
+<h4 align="center" id="monitoring-sh"> monitoring.sh </h2>
+
+<h4 align="center" id="scripts-aval"> Scripts de Avaliação </h2>	
+	
+<h2 align="center" id="como-avaliar">Como avaliar um Born2beRoot?</h2>
+
+<a href='https://github.com/augustobecker/Born2beRoot/blob/main/Evaluation.md'>Avaliação</a>
+	
 <h2 align="center" id="autor"> Autor </h2>
 <div>
 <img height="180em" src="https://user-images.githubusercontent.com/81205527/152089472-0aa06bd9-d882-4c83-adfc-8230d1e958c1.png">
