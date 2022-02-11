@@ -19,7 +19,7 @@ chmod a+x *
 
 sysetmctl enable apparmor
 
+./set_sshserver.sh
 ./set_firewall.sh
 ./set_passwdpolicy.sh
-./set_sshserver.sh
 ./set_loginuser.sh
