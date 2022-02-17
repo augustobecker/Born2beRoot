@@ -104,7 +104,7 @@ Para atualizar um usuário criado antes para também estar sob essa política ba
 	
 	sudo passwd -n 2 -x 30 -w 7 ${OLD_USER}
 	
-• <a href="https://github.com/augustobecker/Born2beRoot/blob/main/setup_scripts/set_sshserver.sh">set_sshserver.sh</a>
+• <a href="https://github.com/augustobecker/Born2beRoot/blob/main/setup_scripts/set_sshserver.sh">set_sshserver.sh</a> - Configura o servidor SSH e mostra como conectar via outra máquina.
 	
 <h4 align="center" id="monitoring-sh"> monitoring.sh </h2>
 
