@@ -12,6 +12,9 @@
 #                                                                            
 #
 
+       GREEN="\033[0;32m"
+       RESET="\033[0m"
+       
      LOGIN42=acesar-l
   LOGIN_USER=$(cat /etc/passwd | grep "$LOGIN42:" | wc -l)
 LOGIN_GROUPS=$(groups $LOGIN42 | grep sudo | grep user42)
@@ -25,4 +28,4 @@ sudo usermod -aG sudo $LOGIN42
 
 sudo passwd -n 2 -x 30 -w 7 $LOGIN42
 
-echo $LOGIN42 is present and is a part of user42 and sudo groups.
+echo -e $GREEN $LOGIN42 is present and is a part of user42 and sudo groups. $RESET
