@@ -12,6 +12,9 @@
 #                                                                            
 #
 
+      GREEN="\033[0;32m"
+      RESET="\033[0m"
+      
    NEW_USER=$1
       GROUP=$2
 GROUP_CHECK=$(getent group | grep "$GROUP:" | wc -l)
@@ -21,4 +24,4 @@ if [ $GROUP_CHECK -ge 1 ]; then sudo addgroup $GROUP; fi
 sudo usermod -aG $GROUP $NEW_USER
 sudo passwd -n 2 -x 30 -w 7 $NEW_USER
 
-echo $NEW_USER was created and added to $GROUP group.
+echo -e $GREEN $NEW_USER was created and added to $GROUP group. $RESET
