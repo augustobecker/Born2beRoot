@@ -13,15 +13,33 @@
 #
 
       GREEN="\033[0;32m"
+	    RED="\033[0;31m"
       RESET="\033[0m"
       
    NEW_USER=$1
       GROUP=$2
+ USER_CHECK=$(cat /etc/passwd | grep "$NEW_USER:" | wc -l)
 GROUP_CHECK=$(getent group | grep "$GROUP:" | wc -l)
 
-sudo useradd -m -s /bin/bash $NEW_USER
-if [ $GROUP_CHECK == 0 ]; then sudo addgroup $GROUP; fi
-sudo usermod -aG $GROUP $NEW_USER
-sudo passwd -n 2 -x 30 -w 7 $NEW_USER
+if [[-n $1 ]]
+then
+	if [ $USER_CHECK -ge 1 ]
+	then
+		echo -e $GREEN$NEW_USER is present. $RESET
+	else
+		sudo useradd -m -s /bin/bash $NEW_USER
+		sudo passwd -n 2 -x 30 -w 7  $NEW_USER
+		echo -e $GREEN$NEW_USER was created. $RESET
+	fi
+else
+	echo -e $RED Please, specify an user. $RESET
+fi
 
-echo -e $GREEN$NEW_USER was created and added to $GROUP group. $RESET
+if [[-n $2 ]]
+then
+	if [ $GROUP_CHECK == 0 ]
+	then
+		sudo addgroup $GROUP
+sudo usermod -aG $GROUP $NEW_USER
+echo -e $GREEN$NEW_USER is now part of $GROUP group.		
+fi
