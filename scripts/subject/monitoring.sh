@@ -19,7 +19,7 @@
     DISK_USED=$(df -m --total | grep "total" | awk '{ print $3 }')
    DISK_TOTAL=$(df --total -BG | grep "total" | awk '{ print $2 }')
   DISK_PERCNT=$(df -m --total | grep "total" | awk '{ print $5 }')
-     CPU_LOAD=$(grep cpu /proc/stat | head -n 1 | awk '{ printf("%.1f%%", (($2 + $3 + $4) / $5 ) * 100) }')
+     CPU_LOAD=$(grep -m 1 cpu /proc/stat | awk '{ printf("%.1f%%", (($2 + $3 + $4) / $5 ) * 100) }')
     LAST_BOOT=$(who -b | head -n 1 | awk '{ print $3, $4}')
           LVM=$(lsblk | grep "lvm" | wc -l)
       LVM_USE=$(if [ $LVM -ge 1 ]; then echo yes; else echo no; fi)
