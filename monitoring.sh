@@ -29,15 +29,15 @@
   MAC_ADDRESS=$(ip link show | grep 'ether' | awk '{ print $2 }')
 COMMANDS_EXEC=$(grep "COMMAND=" /var/log/sudo/sudo.log | wc -l)
 
-wall "	#Architecture: $ARCHITECTURE
-	#CPU Physical: $PHYSICAL_CPU
-	#vCPU: $VIRTUAL_CPU
-	#Memory Usage: $RAM_PERCNT
-	#Disk Usage: $DISK_USED/${DISK_TOTAL}b ($DISK_PERCNT)
-	#CPU load: $CPU_LOAD
-	#Last boot: $LAST_BOOT
-	#LVM use: $LVM_USE
-	#Connexions TCP: $TCP_CONX ESTABLISHED
-	#User log: $USER_LOG
-	#Network: IP $IP_ADDRESS (${MAC_ADDRESS})
-	#Sudo: $COMMANDS_EXEC cmd"
+wall "#Architecture	: $ARCHITECTURE
+#CPU Physical	: $PHYSICAL_CPU
+#vCPU        	: $VIRTUAL_CPU
+#Memory Usage	: $RAM_PERCNT
+#Disk Usage	: $DISK_USED/${DISK_TOTAL}b ($DISK_PERCNT)
+#CPU load	: $CPU_LOAD
+#Last boot	: $LAST_BOOT
+#LVM use	: $LVM_USE
+#Connexions TCP	: $TCP_CONX ESTABLISHED
+#User log	: $USER_LOG
+#Network	: IP $IP_ADDRESS (${MAC_ADDRESS})
+#Sudo		: $COMMANDS_EXEC cmd"
