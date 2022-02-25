@@ -3,7 +3,7 @@
 #
 #                                                                            
 #                                                       :::      ::::::::    
-#   evaluation_check.sh                                :+:      :+:    :+:      
+#   evaluation.sh                                      :+:      :+:    :+:      
 #                                                    +:+ +:+         +:+     
 #   By: acesar-l <acesar-l@student.42sp.org.br     +#+  +:+       +#+        
 #                                                +#+#+#+#+#+   +#+           
