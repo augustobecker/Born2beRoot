@@ -27,7 +27,7 @@
      USER_LOG=$(users | wc -w)
    IP_ADDRESS=$(hostname -I | awk '{ print $1 }')
   MAC_ADDRESS=$(ip link show | grep 'ether' | awk '{ print $2 }')
-COMMANDS_EXEC=$(grep "COMMAND=" /var/log/sudo/sudo.log | wc -l)
+COMMANDS_EXEC=$(($(journalctl _COMM=sudo | wc -l) / 3))
 
 wall "#Architecture	: $ARCHITECTURE
 #CPU Physical	: $PHYSICAL_CPU
