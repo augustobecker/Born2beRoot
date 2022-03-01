@@ -8,30 +8,23 @@
 #   By: acesar-l <acesar-l@student.42sp.org.br>    +#+  +:+       +#+        
 #                                                +#+#+#+#+#+   +#+          
 #   Created: 2021/02/04 12:58:10 by acesar-l          #+#    #+#             
-#   Updated: 2021/02/04 13:00:41 by acesar-l         ###   ########.fr       
+#   Updated: 2021/03/01 13:00:41 by acesar-l         ###   ########.fr       
 #                                                                            
 # 
 
       SSH='/etc/ssh/sshd_config'
-  NETWORK='/etc/network/interfaces'
        IP=$(hostname -I | awk '{print $1}')
- NET_MASK=$()
-  GATEWAY=$(nmcli dev show | grep 'IP4.GATEWAY' | sed -n '1p' | awk '{print $2}')
-BROADCAST=$(ip addr show | awk '{print $4}' | sed -n '9p')
+
+sudo systemctl enable sshd
 
 sed -i 's/#Port 22/Port 4242/g'                  $SSH
 sed -i 's/#PermitRootLogin/PermitRootLogin/g'    $SSH
 sed -i 's/prohibit-password/no/g'                $SSH
 
+sudo systemctl restart sshd
+
 echo "Verify if the ssh_server is active:"
 sudo service ssh status
+ss -tunlp
 echo "To connect via SSH from other terminal:"
 echo ssh $USER@$IP -p 4242
-
-sed -i '11 s/allow-hotplug/auto/g'     $NETWORK
-sed -i '12 s/dhcp/static/g'            $NETWORK
-echo "      address "$IP            >> $NETWORK
-echo "      broadcast "$NET_MASK    >> $NETWORK
-echo "      netmask "$NET_MASK      >> $NETWORK
-echo "      gateway "$GATEWAY       >> $NETWORK
-echo iface enp0s3 inet6 auto        >> $NETWORK
