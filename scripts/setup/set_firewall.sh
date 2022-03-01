@@ -17,3 +17,4 @@ PORT="4242"
 sudo ufw enable
 systemctl enable ufw
 sudo ufw allow {PORT}
+ufw status
