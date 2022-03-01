@@ -15,13 +15,13 @@
       SSH='/etc/ssh/sshd_config'
        IP=$(hostname -I | awk '{print $1}')
 
-sudo systemctl enable sshd
+sudo systemctl enable ssh
 
 sed -i 's/#Port 22/Port 4242/g'                  $SSH
 sed -i 's/#PermitRootLogin/PermitRootLogin/g'    $SSH
 sed -i 's/prohibit-password/no/g'                $SSH
 
-sudo systemctl restart sshd
+sudo systemctl restart ssh
 
 echo "Verify if the ssh_server is active:"
 sudo service ssh status
