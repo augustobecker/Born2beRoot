@@ -16,5 +16,5 @@ apt-get install sudo
 apt-get install vim
 apt-get install libpam-cracklib
 apt-get install net-tools -y
-apt-get install openssh-server
+apt-get install openssh-server openssh-client
 apt-get install ufw
