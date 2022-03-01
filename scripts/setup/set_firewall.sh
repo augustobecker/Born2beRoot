@@ -15,9 +15,5 @@
 PORT="4242"
 
 sudo ufw enable
-sudo ufw allow {PORT}
-sudo ufw default deny incoming
-sudo ufw default deny outgoing
-sudo ufw status
-
 systemctl enable ufw
+sudo ufw allow {PORT}
