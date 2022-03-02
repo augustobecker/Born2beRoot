@@ -16,7 +16,7 @@
          RED="\033[0;31m"
        RESET="\033[0m"
        
-     LOGIN42=acesar-l
+     LOGIN42="acesar-l"
   LOGIN_USER=$(cat /etc/passwd | grep "$LOGIN42:" | wc -l)
 LOGIN_GROUPS=$(groups $LOGIN42 | grep sudo | grep user42 | wc -l)
 USER42_GROUP=$(getent group | grep user42: | wc -l)
@@ -28,14 +28,14 @@ fi
 
 if [ $USER42_GROUP == 0 ]
 then
-       addgroup user42
+       sudo addgroup user42
 fi
 
 sudo usermod -aG user42      $LOGIN42
 sudo usermod -aG sudo        $LOGIN42
 sudo passwd  -n 2 -x 30 -w 7 $LOGIN42
 
-if [ $LOGIN_GROUPS -ge 1]
+if [[ $LOGIN_GROUPS -ge 1 ]]
 then
        echo -e $GREEN$LOGIN42 is present and is a part of user42 and sudo groups. $RESET
 else
