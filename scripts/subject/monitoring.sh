@@ -23,14 +23,13 @@
     LAST_BOOT=$(who -b | head -n 1 | awk '{ print $3, $4}')
       LVM_USE=$(if [ $(lsblk | grep "lvm" | wc -l) -ge 1 ]; then echo yes; else echo no; fi)
           TCP=$(netstat -s -t | grep established | awk '{print $1}')
-     TCP_CONX=$(if [ $TCP -ge 1 ]; then $TCP; else echo NOT; fi)
+     TCP_CONX=$(if [ $TCP -ge 1 ]; then echo $TCP; else echo NOT; fi)
      USER_LOG=$(users | wc -w)
    IP_ADDRESS=$(hostname -I | awk '{ print $1 }')
   MAC_ADDRESS=$(ip link show | grep 'ether' | awk '{ print $2 }')
 COMMANDS_EXEC=$(journalctl _COMM=sudo | grep COMMAND | wc -l)
 
-wall "
-#Architecture	: $ARCHITECTURE
+wall "#Architecture	: $ARCHITECTURE
 #CPU Physical	: $PHYSICAL_CPU
 #vCPU        	: $VIRTUAL_CPU
 #Memory Usage	: $RAM_PERCNT
