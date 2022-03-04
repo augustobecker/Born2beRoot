@@ -20,19 +20,33 @@
       LOGIN_USER=$(cat /etc/passwd | grep acesar-l)
     LOGIN_GROUPS=$(groups acesar-l | grep sudo | grep user42)
 USER_GROUP_CHECK=$(groups acesar-l | grep user42 | grep sudo | wc -l)
+      UFW_STATUS=$(groups acesar-l | grep user42 | grep sudo | wc -l)
+    UFW_4242PORT=$(groups acesar-l | grep user42 | grep sudo | wc -l)
  
 if [ ${LVM} -ge 2 ]
 then 
-       echo -e "Partitions:       ${GREEN}[OK]${RESET}"
+	echo -e "Partitions:       ${GREEN}[OK]${RESET}"
 else
-       echo -e "Partitions:       ${RED}[KO]${RESET}"
+	echo -e "Partitions:       ${RED}[KO]${RESET}"
+fi
+
+if [ ${UFW_STATUS} -ge 1 ]
+then
+	if [[ ${UFW_4242PORT} -ge 2 ]]
+	then
+      		echo -e "UFW:              ${GREEN}[OK] [OK]${RESET}"
+	else
+		echo -e "UFW:	           ${GREEN}[OK]${RED} [KO]${RESET}"
+	fi
+else
+	echo -e "UFW:	           ${RED}[KO] [KO]${RESET}"
 fi
 
 if  [[ "${HOSTNAME}" == "acesar-l42" ]]
 then
-       echo -e "Hostname login42: ${GREEN}[OK]${RESET}"
+	echo -e "Hostname login42: ${GREEN}[OK]${RESET}"
 else
-       echo -e "Hostname login42: ${RED}[KO]${RESET}"
+	echo -e "Hostname login42: ${RED}[KO]${RESET}"
 fi
 
 if [ $USER_GROUP_CHECK == 0 ]
