@@ -20,8 +20,8 @@
       LOGIN_USER=$(cat /etc/passwd | grep acesar-l)
     LOGIN_GROUPS=$(groups acesar-l | grep sudo | grep user42)
 USER_GROUP_CHECK=$(groups acesar-l | grep user42 | grep sudo | wc -l)
-      UFW_STATUS=$(groups acesar-l | grep user42 | grep sudo | wc -l)
-    UFW_4242PORT=$(groups acesar-l | grep user42 | grep sudo | wc -l)
+      UFW_STATUS=$(sudo ufw status | grep active | wc -l)
+    UFW_4242PORT=$(sudo ufw status | grep "4242 " | wc -l)
  
 if [ ${LVM} -ge 2 ]
 then 
@@ -34,12 +34,12 @@ if [ ${UFW_STATUS} -ge 1 ]
 then
 	if [[ ${UFW_4242PORT} -ge 2 ]]
 	then
-      		echo -e "UFW:              ${GREEN}[OK] [OK]${RESET}"
+      		echo -e "UFW:              ${GREEN}[OK][OK]${RESET}"
 	else
-		echo -e "UFW:	           ${GREEN}[OK]${RED} [KO]${RESET}"
+		echo -e "UFW:	           ${GREEN}[OK]${RED}[KO]${RESET}"
 	fi
 else
-	echo -e "UFW:	           ${RED}[KO] [KO]${RESET}"
+	echo -e "UFW:	           ${RED}[KO][KO]${RESET}"
 fi
 
 if  [[ "${HOSTNAME}" == "acesar-l42" ]]
