@@ -22,6 +22,7 @@
 USER_GROUP_CHECK=$(groups acesar-l | grep user42 | grep sudo | wc -l)
       UFW_STATUS=$(sudo ufw status | grep active | wc -l)
     UFW_4242PORT=$(sudo ufw status | grep "4242 " | wc -l)
+      SSH_STATUS=$(sudo service ssh status | grep active | wc -l)
  
 if [ ${LVM} -ge 2 ]
 then 
@@ -40,6 +41,13 @@ then
 	fi
 else
 	echo -e "UFW:	           ${RED}[KO][KO]${RESET}"
+fi
+
+if  [ ${SSH_STATUS} -ge 1 ]
+then
+	echo -e "SSH:              ${GREEN}[OK]${RESET}"
+else
+	echo -e "SSH:              ${RED}[KO]${RESET}"
 fi
 
 if  [[ "${HOSTNAME}" == "acesar-l42" ]]
