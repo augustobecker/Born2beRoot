@@ -10,6 +10,7 @@
 * [Como funciona?](#como-funciona)
 	* [The Scripts](#scripts)
 		* [Setup](#setup-scripts)
+		* [Useful Scripts](#useful-scripts)
 		* [monitoring.sh](#monitoring-sh)
 		* [Evaluation](#scripts-aval)
 * [Como avaliar um Born2beRoot?](#como-avaliar)
@@ -83,7 +84,7 @@ em todos os terminais.
 os requisitos do sujetct. 
 	
 <h4 align="center" id="setup-scripts"> Scripts de Setup </h2>
-	
+
 • <a href="https://github.com/augustobecker/Born2beRoot/blob/main/setup_scripts/install_packages.sh">install_packages.sh</a> - Instala todos os pacotes necessários para
 os outros scripts e para as outras ações requeridas pelo subject.
 	
@@ -93,19 +94,30 @@ libera a porta 4242(requerido pelo subject) e mostra seu status.
 • <a href="https://github.com/augustobecker/Born2beRoot/blob/main/setup_scripts/set_loginuser.sh">set_loginuser.sh</a> - Cria, caso necessário, o usuário com o login
 da intra e o adiciona aos grupos sudo e user42(caso não esteja presente é criado) e ainda aplica parte da política de senhas ao usuário.
 	
-• <a href="https://github.com/augustobecker/Born2beRoot/blob/main/setup_scripts/set_newuser.sh">set_newuser.sh</a> - Cria um novo usuário, o coloca no grupo escolhido (caso não esteja presente é criado) e ainda aplica parte da política de senhas ao usuário. O script deve ser executado seguido do nome do novo usuário e do grupo. 
-	Por exemplo:
-	
-	./set_newuser.sh becker familia_becker
-	Em que becker é o novo usuário e familia_becker o grupo a qual ele vai ser adicionado.
-	
 • <a href="https://github.com/augustobecker/Born2beRoot/blob/main/setup_scripts/set_passwdpolicy.sh">set_passwdpolicy.sh</a> - Aplica a política de senhas requerida pelo subject, mas parte dela apenas para novos usuários.
 Para atualizar um usuário criado antes para também estar sob essa política basta rodar o comando:
 	
 	sudo passwd -n 2 -x 30 -w 7 ${OLD_USER}
 	
 • <a href="https://github.com/augustobecker/Born2beRoot/blob/main/setup_scripts/set_sshserver.sh">set_sshserver.sh</a> - Configura o servidor SSH e mostra como conectar via outra máquina.
+
+• <a href="https://github.com/augustobecker/Born2beRoot/blob/main/setup_scripts/complete_setup.sh">complete_setup.sh</a> - Roda todos os scripts necessários para o setup(acima).
+
+<h4 align="center" id="useful-scripts"> Useful Scripts </h2>
 	
+• <a href="https://github.com/augustobecker/Born2beRoot/blob/main/useful_scripts/set_newuser.sh">set_newuser.sh</a> - Cria um novo usuário, o coloca no grupo escolhido (caso não esteja presente é criado) e ainda aplica parte da política de senhas ao usuário. O script deve ser executado seguido do nome do novo usuário e do grupo. 
+	Por exemplo:
+	
+	./set_newuser.sh becker familia_becker
+	Em que becker é o novo usuário e familia_becker o grupo a qual ele vai ser adicionado.
+
+Faz algumas verificações para checar se o grupo ou o usuário já existem. Funciona também apenas com o argumento do usuário.
+• <a href="https://github.com/augustobecker/Born2beRoot/blob/main/useful_scripts/hostname.sh">hostname.sh</a> - Redefine o hostname do servidor. Deve ser rodado seguido do novo hostname
+	
+	./hostname.sh becker
+	
+• <a href="https://github.com/augustobecker/Born2beRoot/blob/main/useful_scripts/ssh_connect.sh">ssh_connect.sh</a> - Mostra o comando necessário para uma conexão SSH com seu servidor
+
 <h4 align="center" id="monitoring-sh"> monitoring.sh </h2>
 
 <h4 align="center" id="scripts-aval"> Scripts de Avaliação </h2>	
