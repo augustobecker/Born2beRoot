@@ -112,6 +112,7 @@ Para atualizar um usuário criado antes para também estar sob essa política ba
 	Em que becker é o novo usuário e familia_becker o grupo a qual ele vai ser adicionado.
 
 Faz algumas verificações para checar se o grupo ou o usuário já existem. Funciona também apenas com o argumento do usuário.
+
 • <a href="https://github.com/augustobecker/Born2beRoot/blob/main/useful_scripts/hostname.sh">hostname.sh</a> - Redefine o hostname do servidor. Deve ser rodado seguido do novo hostname
 	
 	./hostname.sh becker
