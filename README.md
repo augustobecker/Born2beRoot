@@ -13,7 +13,7 @@
 		* [Setup](#setup-scripts)
 		* [monitoring.sh](#monitoring-sh)
 		* [Evaluation](#evaluation-scripts)
-* [How do I evaluate a Born2beRoot?](#how-evaluate)
+* [42 Cursus](#42-cursus)
 * [Author](#author)
 
 <h2 align="center" id="what-is-born2beroot" > What is Born2beRoot?</h2>
@@ -69,6 +69,21 @@ The forth project at 42. It consists of having you set up your first server by f
 
 <h4 align="center" id="evaluation-scripts"> Evaluation Scripts </h2>
 	
+<h2 align="center" id="42-cursus"> 42 Cursus </h2>
+	
+42 is a global education initiative that proposes a new way of learning technology: no teachers, no classrooms,
+students learning from their fellow students (peer to peer learning),
+with a methodology that develops both computing and life skills.
+Not to mention that it's completely free of charge and open to all with no prerequisites.
+
+Admissions at 42 are unlike other colleges. We use a merit-based admission process.
+The final step of the admission is the Piscine - This is part of the admissions process and 
+requires 4 weeks of intensive and immersive coding. No prior coding experience is necessary at all.
+	
+You can check more about the admission process on the 42sp website: https://www.42sp.org.br or on my github repository: <a href="">42 Piscine</a>
+
+To see other projects developed by me at 42, click here: <a href="https://github.com/augustobecker/42cursus">42 Cursus </a>
+
 <h2 align="center" id="author"> Author </h2>
 <div>
 <img height="180em" src="https://user-images.githubusercontent.com/81205527/152089472-0aa06bd9-d882-4c83-adfc-8230d1e958c1.png">
