@@ -14,11 +14,12 @@
 		* [monitoring.sh](#monitoring-sh)
 		* [Evaluation](#scripts-aval)
 * [Como avaliar um Born2beRoot?](#como-avaliar)
+* [42 Cursus](#42-cursus)
 * [Autor?](#autor)
 
 <h2 align="center" id="o-que-e-born2beroot" > O que é Born2beRoot?</h2>
 O quarto projeto no Instituto 42. Consiste em configurar o seu primeiro servidor seguindo algumas regras específicas, desenvolver um script que mostra informações
-relevantes do sistema e submter no repositório git da 42 somente um arquivo signature.txt contendo a assinatura do Disco Virtual (vdi) da VM.
+relevantes do sistema e submeter no repositório git da 42 somente um arquivo signature.txt contendo a assinatura do Disco Virtual (vdi) da VM.
 
 <h3 align="center" id="as-regras">:bookmark_tabs: As Regras: </h3>
 
@@ -62,7 +63,7 @@ relevantes do sistema e submter no repositório git da 42 somente um arquivo sig
   
 <h2 align="center" id="como-funciona"> Como funciona? </h2>
 
-Para momento de fazer o setup do servidor (Após a instalação da VM e do servidor Debian nela), fiz questão de criar alguns scripts
+Para o momento de fazer o setup do servidor (Após a instalação da VM e do servidor Debian nela), fiz questão de criar alguns scripts
 para facilitar bastante o processo - sinta-se livre para alterar segundo sua necessidade.
 
 <h3 align="center" id="scripts"> Scripts </h3>
@@ -126,6 +127,23 @@ Faz algumas verificações para checar se o grupo ou o usuário já existem. Fun
 <h2 align="center" id="como-avaliar">Como avaliar um Born2beRoot?</h2>
 
 <a href='https://github.com/augustobecker/Born2beRoot/blob/main/Evaluation.md'>Avaliação</a>
+
+<h2 align="center" id="42-cursus"> 42 Cursus </h2>
+	
+A 42 é uma iniciativa educacional global que propõe uma nova forma de aprender tecnologia: sem professores, sem salas de aula,
+estudantes aprendendo com seus colegas estudantes (Aprendizado peer to peer),
+com uma metodologia que desenvolve habilidades de computação e da vida.
+Sem mencionar que é completamente gratuita e aberta para todos, sem pré-requisitos. 
+    
+As admissões na 42 são diferentes de outras escolas. Usamos um processo de admissão baseado em mérito.
+O passo final no processo é a Piscina - parte parte do processo seletivo que requer 4 semanas de código intenso e imersivo.
+Não é necessário experiência anterior em programação.
+    
+Você pode conferir mais sobre o processo de admissão no site da 42sp: https://www.42sp.org.br
+    
+ou no meu repositório do github: <a href="https://github.com/augustobecker/42sp_Piscine">42 Piscine</a>
+
+Para ver outros projetos da 42 desenvolvidos por mim, clique aqui: <a href="https://github.com/augustobecker/42cursus">42 Cursus </a>
 	
 <h2 align="center" id="autor"> Autor </h2>
 <div>
