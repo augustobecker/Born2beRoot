@@ -8,7 +8,7 @@
 #   By: acesar-l <acesar-l@student.42sp.org.br     +#+  +:+       +#+        
 #                                                +#+#+#+#+#+   +#+           
 #   Created: 2022/01/30 17:18:19 by acesar-l          #+#    #+#             
-#   Updated: 2022/01/30 17:19:22 by acesar-l         ###   ########.fr       
+#   Updated: 2022/04/26 11:24:22 by acesar-l         ###   ########.fr       
 #                                                                            
 #
 
@@ -18,3 +18,4 @@ apt-get install libpam-cracklib
 apt-get install net-tools -y
 apt-get install openssh-server openssh-client
 apt-get install ufw
+apt-get install apparmor
