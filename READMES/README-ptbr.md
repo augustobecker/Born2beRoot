@@ -13,7 +13,6 @@
 		* [Useful Scripts](#useful-scripts)
 		* [monitoring.sh](#monitoring-sh)
 		* [Evaluation](#scripts-aval)
-* [Como avaliar um Born2beRoot?](#como-avaliar)
 * [42 Cursus](#42-cursus)
 * [Autor?](#autor)
 
@@ -123,10 +122,6 @@ Faz algumas verificações para checar se o grupo ou o usuário já existem. Fun
 <h4 align="center" id="monitoring-sh"> monitoring.sh </h2>
 
 <h4 align="center" id="scripts-aval"> Scripts de Avaliação </h2>	
-	
-<h2 align="center" id="como-avaliar">Como avaliar um Born2beRoot?</h2>
-
-<a href='https://github.com/augustobecker/Born2beRoot/blob/main/Evaluation.md'>Avaliação</a>
 
 <h2 align="center" id="42-cursus"> 42 Cursus </h2>
 	
