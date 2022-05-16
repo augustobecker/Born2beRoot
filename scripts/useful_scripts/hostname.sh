@@ -17,7 +17,6 @@ NEW_HOSTNAME=$1
 GREEN="\033[0;32m"
 RESET="\033[0m"
 
-cd /
 sed -i "s/$HOSTNAME/$NEW_HOSTNAME/g" /etc/hosts
 echo $NEW_HOSTNAME > /etc/hostname
 echo $NEW_HOSTNAME > /proc/sys/kernel/hostname
