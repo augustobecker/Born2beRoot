@@ -8,19 +8,19 @@
 #   By: acesar-l <acesar-l@student.42sp.org.br>    +#+  +:+       +#+        
 #                                                +#+#+#+#+#+   +#+          
 #   Created: 2021/02/01 16:58:10 by acesar-l          #+#    #+#             
-#   Updated: 2021/02/25 15:17:41 by acesar-l         ###   ########.fr       
+#   Updated: 2021/05/30 10:42:42 by acesar-l         ###   ########.fr       
 #                                                                            
 # 
               
  ARCHITECTURE=$(uname -a)
  PHYSICAL_CPU=$(grep "physical id" /proc/cpuinfo | wc -l)
   VIRTUAL_CPU=$(grep "processor" /proc/cpuinfo | wc -l)
-   RAM_PERCNT=$(free -m | grep "Mem:" | awk '{printf("%d/%dMB (%.2f%%)", $3, $2, $3 / $2 * 100)}')
+   RAM_PERCNT=$(free -m | grep "Mem" | awk '{printf("%d/%dMB (%.2f%%)", $3, $2, $3 / $2 * 100)}')
     DISK_USED=$(df --total -BG | awk 'END{print $3}' | sed 's/G//g')
    DISK_TOTAL=$(df --total -BG | awk 'END{print $2}')
   DISK_PERCNT=$(df --total -BG | awk 'END{print $5}')
      CPU_LOAD=$(grep -m 1 cpu /proc/stat | awk '{printf("%.1f%%", (($2 + $3 + $4) / $5 ) * 100)}')
-    LAST_BOOT=$(who -b | head -n 1 | awk '{ print $3, $4}')
+    LAST_BOOT=$(who -b | head -n 1 | awk '{ print $4, $5}')
       LVM_USE=$(if [ $(lsblk | grep "lvm" | wc -l) -ge 1 ]; then echo yes; else echo no; fi)
           TCP=$(netstat -s -t | grep established | awk '{print $1}')
      TCP_CONX=$(if [ $TCP -ge 1 ]; then echo $TCP; else echo NOT; fi)
