@@ -26,7 +26,7 @@ fi
 sed -i '25 s/minlen=8/minlen=10/' $PAM
 sed -i '25 s/difok=3/difok=7/' $PAM
 sed -i '25 s/$/ maxrepeat=3 usercheck=1/' $PAM
-sed -i '25 s/$/ ucredit=-1 dcredit=-1 enforce_for_root/' $PAM
+sed -i '25 s/$/ ucredit=-1 dcredit=-1 lcredit=-1 enforce_for_root/' $PAM
 
 sed -i '102 s/$/\/snap\/bin/' $FILE
 sed -i '160 s/99999/30/' $FILE
@@ -38,8 +38,9 @@ echo "*                             PASSWORD POLICY                             
 echo "******************************************************************************" >> $TXT
 echo "* Your password must be at least 10 characters long.    | minlen=10          *" >> $TXT
 echo "*                                                       |                    *" >> $TXT
-echo "* It must contain an uppercase letter                   | ucredit=-1         *" >> $TXT
+echo "* It must contain an uppercase letter, lowercase        | ucredit=-1         *" >> $TXT
 echo "* and a number.                                         | dcredit=-1         *" >> $TXT
+echo "*                                                       | lcredit=-1         *" >> $TXT
 echo "*                                                       |                    *" >> $TXT
 echo "* It must not contain more than 3 consecutive           | maxrepeat=3        *" >> $TXT
 echo "* identical characters.                                 |                    *" >> $TXT
