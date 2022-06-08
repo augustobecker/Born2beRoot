@@ -18,7 +18,7 @@
 * [Author](#author)
 
 <h2 align="center" id="what-is-born2beroot" > What is Born2beRoot?</h2>
-The forth project at 42. It consists of having you set up your first server by following specific rules, develop a sricpt to display important system informations and turn in a signature.txt file at the root of your repository (You must paste in it the signature of your machine’s virtual disk).
+The forth project at 42. It consists of having you set up your first server by following specific rules, develop a sricpt to display important system informations and turn in a signature.txt file at the root of your repository - the signature of your machine’s virtual disk.
 
 <h3 align="center" id="the-rules">:bookmark_tabs: The Rules: </h3>
 
