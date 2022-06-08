@@ -67,8 +67,6 @@ The forth project at 42. It consists of having you set up your first server by f
 <h4 align="center" id="setup-scripts"> Setup Scripts </h2>
 	
 <h4 align="center" id="monitoring-sh"> monitoring.sh </h2>
-
-<h4 align="center" id="evaluation-scripts"> Evaluation Scripts </h2>
 	
 <h2 align="center" id="42-cursus"> 42 Cursus </h2>
 	
@@ -81,7 +79,7 @@ Admissions at 42 are unlike other colleges. We use a merit-based admission proce
 The final step of the admission is the Piscine - This is part of the admissions process and 
 requires 4 weeks of intensive and immersive coding. No prior coding experience is necessary at all.
 	
-You can check more about the admission process on the 42sp website: https://www.42sp.org.br or on my github repository: <a href="">42 Piscine</a>
+You can check more about the admission process on the 42sp website: https://www.42sp.org.br or on my github repository: <a href="https://github.com/augustobecker/42sp_Piscine">42 Piscine</a>
 
 To see other projects developed by me at 42, click here: <a href="https://github.com/augustobecker/42cursus">42 Cursus </a>
 
