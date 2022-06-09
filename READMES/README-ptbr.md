@@ -2,6 +2,7 @@
 <p align="center">:information_source: Setup de um servidor Debian GNU/Linux em uma VM e mais alguns scripts úteis.</p>
 
 <p align="center"><a href="https://www.42sp.org.br/" target="_blank"><img src="https://img.shields.io/static/v1?label=&message=SP&color=000&style=for-the-badge&logo=42""></a></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/81205527/172609635-7e885150-0014-4f7b-815d-45ab7bfc2b47.png"> </p>
 <p align="center"><a href="https://github.com/augustobecker/Born2beRoot/blob/main/README.md"><img src="https://img.shields.io/badge/available%20in-EN-blue"></a></p>
 
 ## Índice
