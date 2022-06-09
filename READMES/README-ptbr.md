@@ -120,9 +120,7 @@ Faz algumas verificações para checar se o grupo ou o usuário já existem. Fun
 	
 • <a href="https://github.com/augustobecker/Born2beRoot/blob/main/useful_scripts/ssh_connect.sh">ssh_connect.sh</a> - Mostra o comando necessário para uma conexão SSH com seu servidor
 
-<h4 align="center" id="monitoring-sh"> monitoring.sh </h2>
-
-<h4 align="center" id="scripts-aval"> Scripts de Avaliação </h2>	
+<h4 align="center" id="monitoring-sh"> monitoring.sh </h2>	
 
 <h2 align="center" id="42-cursus"> 42 Cursus </h2>
 	
